@@ -50,8 +50,8 @@ def criar_conta() -> None:
     print('Informe os dados do cliente: ')
 
     nome: str = input('Nome do cliente:')
-    email: str = input('Email do cliente: ')
-    cpf: str = input('E-mail do cliente: ')
+    email: str = input('E-mail do cliente: ')
+    cpf: str = input('Cpf do cliente: ')
     data_nascimento: str = input('Data de nascimento do cliente: ')
 
     cliente: Cliente = Cliente(nome, email, cpf, data_nascimento)
@@ -76,7 +76,7 @@ def efetuar_saque() -> None:
         if conta:
             valor: float = float(input('Informe o valor do saque: '))
 
-            contas.sacar(valor)
+            conta.sacar(valor)
         else:
             print(f'Não foi encontrada a conta com o número: {numero}')
     else:
@@ -103,7 +103,7 @@ def efetuar_deposito() -> None:
 
 def efetuar_transferencia( )-> None:
     if len(contas) > 0:
-        numero_origem: int = int(input('Informe o número da sua conta'))
+        numero_origem: int = int(input('Informe o número da sua conta: '))
 
         conta_origem: Conta = buscar_conta_por_numero(numero_origem)
 
